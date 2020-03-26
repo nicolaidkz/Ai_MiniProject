@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//See in editor instead of only in play mode
+[ExecuteInEditMode]
+
 //will add components if object dont have them already
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
@@ -9,6 +12,10 @@ using UnityEngine;
 
 public class TileMap : MonoBehaviour
 {
+    public int size_x = 100;
+    public int size_z = 50;
+    public float tileSize = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,34 +24,49 @@ public class TileMap : MonoBehaviour
 
     void BuildMesh()
     {
+        int numTiles = size_x * size_z;
+        int numTriangles = numTiles * 2;
+
+        int vertsize_x = size_x + 1;
+        int vertsize_z = size_z + 1;
+        int numVerts = vertsize_x * vertsize_z;
+
         // Generate new mesh data
-        Vector3[] vertices = new Vector3[4];
-        int[] triangles = new int[2*3];
-        Vector3[] normals = new Vector3[4];
-        Vector2[] uv = new Vector2[4];
+        Vector3[] vertices = new Vector3[numVerts];
+        Vector3[] normals = new Vector3[numVerts];
+        Vector2[] uv = new Vector2[numVerts];
 
-        vertices[0] = new Vector3(0, 0, 0);
-        vertices[1] = new Vector3(100, 0, 0);
-        vertices[2] = new Vector3(0, 0, 100);
-        vertices[3] = new Vector3(100, 0, -100);
+        int[] triangles = new int[numTriangles * 3];
 
-        triangles[0] = 0;
-        triangles[1] = 3;
-        triangles[2] = 2;
+        int x, z;
+        for(z=0; z < vertsize_z; z++)
+        {
+            for(x=0; x < vertsize_x; x++)
+            {
+                vertices[z * vertsize_x + x] = new Vector3(x * tileSize, 0, z * tileSize);
+                normals[z * vertsize_x + x] = Vector3.up;
+                uv[z * vertsize_x + x] = new Vector2((float)x / size_x, (float)z / size_z);
+            }
+        }
+        Debug.Log("Done Verts");
 
-        triangles[3] = 0;
-        triangles[4] = 1;
-        triangles[5] = 3;
-
-        normals[0] = Vector3.up;
-        normals[1] = Vector3.up;
-        normals[2] = Vector3.up;
-        normals[3] = Vector3.up;
-
-        uv[0] = new Vector2(0, 0);
-        uv[1] = new Vector2(1, 0);
-        uv[2] = new Vector2(0, 1);
-        uv[3] = new Vector2(1, 1);
+        for (z = 0; z < size_z; z++)
+        {
+            for (x = 0; x < size_x; x++)
+            {
+                int squareindex = z * size_x + x;
+                int triangleOffset = squareindex * 6;
+                
+                triangles[triangleOffset + 0] = z * vertsize_x + x +              0;
+                triangles[triangleOffset + 1] = z * vertsize_x + x + vertsize_x + 0;
+                triangles[triangleOffset + 2] = z * vertsize_x + x + vertsize_x + 1;
+                
+                triangles[triangleOffset + 3] = z * vertsize_x + x +              0;
+                triangles[triangleOffset + 4] = z * vertsize_x + x + vertsize_x + 1;
+                triangles[triangleOffset + 5] = z * vertsize_x + x +              1;
+            }
+        }
+        Debug.Log("Done Triangles");
 
         // Create a new mesh and populate with the data
         Mesh mesh = new Mesh();
@@ -59,6 +81,31 @@ public class TileMap : MonoBehaviour
         MeshCollider mesh_collider = GetComponent<MeshCollider>();
 
         mesh_filter.mesh = mesh;
+        Debug.Log("Done Mesh");
     }
 
 }
+
+//Manually adding data
+//vertices[0] = new Vector3(0, 0, 0);
+//vertices[1] = new Vector3(100, 0, 0);
+//vertices[2] = new Vector3(0, 0, 100);
+//vertices[3] = new Vector3(100, 0, -100);
+
+//triangles[0] = 0;
+//triangles[1] = 3;
+//triangles[2] = 2;
+
+//triangles[3] = 0;
+//triangles[4] = 1;
+//triangles[5] = 3;
+
+//normals[0] = Vector3.up;
+//normals[1] = Vector3.up;
+//normals[2] = Vector3.up;
+//normals[3] = Vector3.up;
+
+//uv[0] = new Vector2(0, 0);
+//uv[1] = new Vector2(1, 0);
+//uv[2] = new Vector2(0, 1);
+//uv[3] = new Vector2(1, 1);
