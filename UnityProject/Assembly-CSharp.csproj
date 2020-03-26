@@ -68,8 +68,14 @@
     <Compile Include="Assets\NetMQExample\Scripts\RunAbleThread.cs" />
     <Compile Include="Assets\Scripts\TileMap.cs" />
     <Compile Include="Assets\Scripts\TileMouseOver.cs" />
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
@@ -77,8 +83,20 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -89,6 +107,9 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
@@ -98,8 +119,14 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -109,6 +136,12 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
@@ -124,39 +157,6 @@
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
