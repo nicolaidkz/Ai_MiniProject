@@ -12,8 +12,8 @@ using UnityEngine;
 
 public class TileMap : MonoBehaviour
 {
-    public int size_x = 100;
-    public int size_z = 50;
+    public int size_x = 1000;
+    public int size_z = 1000;
     public float tileSize = 1.0f;
 
     // Start is called before the first frame update
@@ -22,8 +22,33 @@ public class TileMap : MonoBehaviour
         BuildMesh();
     }
 
-    void BuildMesh()
+    void BuildTexture()
     {
+        int texWidth = 10;
+        int texHeight = 10;
+        Texture2D texture = new Texture2D(texWidth, texHeight);
+
+        for (int y=0; y< texHeight; y++)
+        {
+            for (int x = 0; x < texWidth; x++)
+            {
+                Color c = new Color(Random.Range(0f, 1f), 0, 0);
+                texture.SetPixel(x, y, c);
+            }
+        }
+        texture.filterMode = FilterMode.Point;
+        texture.wrapMode = TextureWrapMode.Clamp;
+        texture.Apply();
+
+        MeshRenderer mesh_renderer = GetComponent<MeshRenderer>();
+        mesh_renderer.sharedMaterials[0].mainTexture = texture;
+
+        Debug.Log("Done Texture");
+    }
+
+    public void BuildMesh()
+    {
+
         int numTiles = size_x * size_z;
         int numTriangles = numTiles * 2;
 
@@ -81,16 +106,19 @@ public class TileMap : MonoBehaviour
         MeshCollider mesh_collider = GetComponent<MeshCollider>();
 
         mesh_filter.mesh = mesh;
+        mesh_collider.sharedMesh = mesh;
         Debug.Log("Done Mesh");
+
+        BuildTexture();
     }
 
 }
 
 //Manually adding data
 //vertices[0] = new Vector3(0, 0, 0);
-//vertices[1] = new Vector3(100, 0, 0);
-//vertices[2] = new Vector3(0, 0, 100);
-//vertices[3] = new Vector3(100, 0, -100);
+//vertices[1] = new Vector3(1, 0, 0);
+//vertices[2] = new Vector3(0, 0, -1);
+//vertices[3] = new Vector3(1, 0, -1);
 
 //triangles[0] = 0;
 //triangles[1] = 3;

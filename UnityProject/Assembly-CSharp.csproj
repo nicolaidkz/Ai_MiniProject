@@ -66,7 +66,10 @@
     <Compile Include="Assets\NetMQExample\Scripts\HelloClient.cs" />
     <Compile Include="Assets\NetMQExample\Scripts\HelloRequester.cs" />
     <Compile Include="Assets\NetMQExample\Scripts\RunAbleThread.cs" />
+    <Compile Include="Assets\Scripts\AgentMovement.cs" />
+    <Compile Include="Assets\Scripts\FlyCamera.cs" />
     <Compile Include="Assets\Scripts\TileMap.cs" />
+    <Compile Include="Assets\Scripts\TileMapMouse.cs" />
     <Compile Include="Assets\Scripts\TileMouseOver.cs" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Users/madsa/Desktop/AI/Ai_MiniProject/UnityProject/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
