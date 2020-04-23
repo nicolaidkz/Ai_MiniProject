@@ -120,6 +120,7 @@ class FSM(object):
             self.SetState(self.trans.toState)
             self.curState.Enter()
             self.trans = None
+        print(self.curState)
         self.curState.Execute()
 
 
