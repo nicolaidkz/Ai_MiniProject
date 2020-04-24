@@ -31,15 +31,16 @@ class State(object):
         pass
 
 class CleanDishes(State):
-    def __init__(self, FSM):
+    def __init__(self, FSM, name):
+        self.name = name
         super(CleanDishes,self).__init__(FSM)
 
     def Enter(self):
-        print("Preparing to clean dishes.")
+        print(self.name + " is preparing to clean dishes.")
         super(CleanDishes, self).Enter()
 
     def Execute(self):
-        print("Cleaning dishes.")
+        print(self.name + " is cleaning dishes.")
         if(self.startTime + self.timer <= perf_counter()):
             if not(randint(1,3) %2):
                 self.FSM.ToTransition("toVacuum")
@@ -47,18 +48,19 @@ class CleanDishes(State):
                 self.FSM.ToTransition("toSleep")
 
     def Exit(self):
-        print("Finishing cleaning dishes.")
+        print(self.name + " is finishing cleaning dishes.")
 
 class Vacuum(State):
-    def __init__(self, FSM):
+    def __init__(self, FSM, name):
+        self.name = name
         super(Vacuum,self).__init__(FSM)
 
     def Enter(self):
-        print("Starting to Vacuum.")
+        print(self.name + " is starting to Vacuum.")
         super(Vacuum, self).Enter()
 
     def Execute(self):
-        print("Vacuuming.")
+        print(self.name + " is vacuuming.")
         if(self.startTime + self.timer <= perf_counter()):
             if not(randint(1,3) %2):
                 self.FSM.ToTransition("toSleep")
@@ -66,18 +68,19 @@ class Vacuum(State):
                 self.FSM.ToTransition("toCleanDishes")
 
     def Exit(self):
-        print("Finished Vacuuming.")
+        print(self.name + " finished Vacuuming.")
 
 class Sleep(State):
-    def __init__(self, FSM):
+    def __init__(self, FSM, name):
+        self.name = name
         super(Sleep,self).__init__(FSM)
 
     def Enter(self):
-        print("Starting to Sleep.")
+        print(self.name + " is starting to Sleep.")
         super(Sleep, self).Enter()
 
     def Execute(self):
-        print("Sleeping.")
+        print(self.name + " is sleeping.")
         if(self.startTime + self.timer <= perf_counter()):
             if not(randint(1,3) %2):
                 self.FSM.ToTransition("toVacuum")
@@ -85,14 +88,15 @@ class Sleep(State):
                 self.FSM.ToTransition("toCleanDishes")
 
     def Exit(self):
-        print("Waking up from Sleep.")
+        print(self.name + " is waking up from Sleep.")
 
 
 ##=========================================
 ## FINITE STATE MACHINES
 
 class FSM(object):
-    def __init__(self, character):
+    def __init__(self, character, name):
+        self.name = name
         self.char = character
         self.states = {}
         self.transitions = {}
@@ -135,8 +139,9 @@ class FSM(object):
 Char = type("Char", (object,), {"day":0})
 
 class RobotMaid(Char):
-    def __init__(self):
-        self.FSM = FSM(self)
+    def __init__(self, name):
+        self.name = name
+        self.FSM = FSM(self, name)
 
         ## TRANSITIONS
         self.FSM.AddTransition("toSleep", Transition("Sleep"))
@@ -144,9 +149,9 @@ class RobotMaid(Char):
         self.FSM.AddTransition("toCleanDishes", Transition("CleanDishes"))
 
         ## STATES
-        self.FSM.AddState("Sleep", Sleep(self.FSM))
-        self.FSM.AddState("CleanDishes", CleanDishes(self.FSM))
-        self.FSM.AddState("Vacuum", Vacuum(self.FSM))
+        self.FSM.AddState("Sleep", Sleep(self.FSM, name))
+        self.FSM.AddState("CleanDishes", CleanDishes(self.FSM, name))
+        self.FSM.AddState("Vacuum", Vacuum(self.FSM, name))
 
         self.FSM.SetState("Sleep")
 
@@ -155,10 +160,18 @@ class RobotMaid(Char):
 
 
 if __name__ == '__main__':
-    r = RobotMaid()
-    for i in range(1):
+    r = RobotMaid("Claus")
+    s = RobotMaid("Hendrik")
+    t = RobotMaid("Rob")
+    u = RobotMaid("Charlie")
+    v = RobotMaid("Roger")
+    for i in range(2):
         startTime = perf_counter()
         timeInterval = 1
         while (startTime + timeInterval > perf_counter()):
             pass
         r.Execute()
+        s.Execute()
+        t.Execute()
+        u.Execute()
+        v.Execute()
