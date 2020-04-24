@@ -99,28 +99,33 @@ class FSM(object):
         self.curState = None
         self.prevState = None
         self.trans = None
+        #print(1)
 
     def AddTransition(self, transName, transition):
         self.transitions[transName] = transition
+        #print(2)
 
     def AddState(self, stateName, state):
         self.states[stateName] = state
+        #print(3)
 
     def SetState(self, stateName):
         self.prevState = self.curState
         self.curState = self.states[stateName]
+        #print(4)
 
     def ToTransition(self, toTrans):
         self.trans = self.transitions[toTrans]
+        #print(5)
 
     def Execute(self):
+        #print(6)
         if(self.trans):
             self.curState.Exit()
             self.trans.Execute()
             self.SetState(self.trans.toState)
             self.curState.Enter()
             self.trans = None
-        print(self.curState)
         self.curState.Execute()
 
 
@@ -133,15 +138,15 @@ class RobotMaid(Char):
     def __init__(self):
         self.FSM = FSM(self)
 
-        ## STATES
-        self.FSM.AddState("Sleep", Sleep(self.FSM))
-        self.FSM.AddState("CleanDishes", CleanDishes(self.FSM))
-        self.FSM.AddState("Vacuum", Vacuum(self.FSM))
-
         ## TRANSITIONS
         self.FSM.AddTransition("toSleep", Transition("Sleep"))
         self.FSM.AddTransition("toVacuum", Transition("Vacuum"))
         self.FSM.AddTransition("toCleanDishes", Transition("CleanDishes"))
+
+        ## STATES
+        self.FSM.AddState("Sleep", Sleep(self.FSM))
+        self.FSM.AddState("CleanDishes", CleanDishes(self.FSM))
+        self.FSM.AddState("Vacuum", Vacuum(self.FSM))
 
         self.FSM.SetState("Sleep")
 
@@ -151,7 +156,7 @@ class RobotMaid(Char):
 
 if __name__ == '__main__':
     r = RobotMaid()
-    for i in range(10):
+    for i in range(1):
         startTime = perf_counter()
         timeInterval = 1
         while (startTime + timeInterval > perf_counter()):
