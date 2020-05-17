@@ -331,7 +331,7 @@ public class Environment : MonoBehaviour {
                         MeshRenderer tree = Instantiate (treePrefab, tileCentres[x, y], rot);
                         tree.transform.parent = treeHolder;
                         tree.transform.localScale = Vector3.one * scale;
-                        tree.material.color = new Color (r, g, b);
+                        tree.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = new Color (r, g, b);
 
                         // Mark tile unwalkable
                         walkable[x, y] = false;

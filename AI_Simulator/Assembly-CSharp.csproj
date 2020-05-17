@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Behavior\LivingEntity.cs" />
     <Compile Include="Assets\Scripts\Behavior\Plant.cs" />
     <Compile Include="Assets\Scripts\Behavior\Rabbit.cs" />
+    <Compile Include="Assets\Scripts\Camera\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\DataTypes\CauseOfDeath.cs" />
     <Compile Include="Assets\Scripts\DataTypes\Coord.cs" />
     <Compile Include="Assets\Scripts\DataTypes\CreatureAction.cs" />

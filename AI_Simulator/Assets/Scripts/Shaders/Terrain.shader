@@ -10,8 +10,8 @@
     {
         Pass 
         {
-            ColorMaterial AmbientAndDiffuse
             Lighting On
+            ColorMaterial AmbientAndDiffuse
             SetTexture[_MainTex] 
             {
                 Combine texture * primary, texture * primary

@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 0
 --- !u!114 &2
@@ -45,8 +45,8 @@ MonoBehaviour:
     y: 30
     width: 1904
     height: 930
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 678, y: 492}
+  m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
   controlID: 56
 --- !u!114 &3
@@ -295,9 +295,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 374
-    y: 81
+    y: 82
     width: 1033
-    height: 542
+    height: 541
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &13
 MonoBehaviour:
@@ -338,20 +338,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Models
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Models
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\madsa\Desktop\Gitkraken\Ai_MiniProject\AI_Simulator
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8e350000
-    m_LastClickedID: 13710
-    m_ExpandedIDs: 00000000bc330000be330000c03300008835000000ca9a3b
+    scrollPos: {x: 0, y: 9}
+    m_SelectedIDs: ce330000
+    m_LastClickedID: 13262
+    m_ExpandedIDs: 00000000bc330000be330000c0330000ce330000d0330000c439000098410000fa4f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -407,7 +407,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000
+    m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -502,9 +502,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 8e350000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 70fbffff
+      m_ExpandedIDs: 5c15fcff5a45fcffae45fcff7c47fcff2c1cfdff941efdff087ffdff0c7ffdff18dffeffbafbfefff0fffeffc619ffffee19ffff2e32ffff70fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -564,9 +564,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.0121549, y: -17.259314, z: 2.7971687}
+    m_Target: {x: 7.3608146, y: 6.704381, z: -3.9123838}
     speed: 2
-    m_Value: {x: 1.0121549, y: -17.259314, z: 2.7971687}
+    m_Value: {x: 7.3608146, y: 6.704381, z: -3.9123838}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -612,13 +612,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.5285073, y: 0.0005383308, z: -0.00029358966, w: -0.8489866}
+    m_Target: {x: -0.22344697, y: -0.18952323, z: 0.044412065, w: -0.9551906}
     speed: 2
-    m_Value: {x: -0.5284802, y: 0.0018117204, z: -0.0010862964, w: -0.848943}
+    m_Value: {x: -0.2234236, y: -0.18950342, z: 0.044407424, w: -0.95509076}
   m_Size:
-    m_Target: 48.59306
+    m_Target: 6.995977
     speed: 2
-    m_Value: 48.59306
+    m_Value: 6.995977
   m_Ortho:
     m_Target: 0
     speed: 2
