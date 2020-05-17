@@ -6,6 +6,8 @@ import pickle
 import json
 
 serverPost: str = "null"
+length: int = 4
+increment: int = 1
 
 # this is the ip we are connecting to
 bind_ip = "127.0.0.1"
@@ -168,13 +170,22 @@ class FSM(object):
 
     def Execute(self):
         #print(6)
+        global increment
+        global length
         if(self.trans):
             self.curState.Exit()
             self.trans.Execute()
+            #print(1)
             self.SetState(self.trans.toState)
+            #print(2)
             self.curState.Enter()
             self.trans = None
-        self.curState.Execute()
+            increment += 1
+        if(increment < length):
+            self.curState.Execute()
+        if (increment == length):
+            increment = 1
+            self.SetState("Idle")
 
 
 ##=========================================
@@ -223,6 +234,7 @@ def ServerPost(data):
 def handle_client(client_socket):
 
     global serverPost
+    global length
 
     while True:
 
@@ -234,28 +246,29 @@ def handle_client(client_socket):
                 if data.decode("utf-8") == "CollectWood":
                     print("client received: " + data.decode("utf-8") + " from server.")
                     serverPost = data.decode("utf-8")
-                    for i in range(4):
+                    for i in range(length):
                         startTime = perf_counter()
                         timeInterval = 1
                         while (startTime + timeInterval > perf_counter()):
                             pass
                         r.Execute()
-                        if (i > 2):
+                        if (i > length-2):
                             serverPost = ""
                             print("String is " + serverPost + "EMPTY!")
+
+                    #client_socket.send(stringDataPos.encode("utf-8"))
 
 
                 if data.decode("utf-8") == "CollectIron":
                     print("client received: " + data.decode("utf-8") + " from server.")
                     serverPost = data.decode("utf-8")
-                    print(serverPost)
-                    for i in range(4):
+                    for i in range(length):
                         startTime = perf_counter()
                         timeInterval = 1
                         while (startTime + timeInterval > perf_counter()):
                             pass
                         r.Execute()
-                        if (i > 2):
+                        if (i > length-2):
                             serverPost = ""
                             print("String is " + serverPost + "EMPTY!")
 
