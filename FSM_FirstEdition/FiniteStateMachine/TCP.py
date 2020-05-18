@@ -12,6 +12,7 @@ serverPost: str = "null"
 length: int = 4
 increment: int = 1
 s: str = ""
+lst: str = ""
 
 # this is the ip we are connecting to
 bind_ip = "127.0.0.1"
@@ -245,43 +246,79 @@ def index_2d(data, search):
 
 
 # Function to string into grid form
-def gridStr(string):
-    l = len(string)
-    k = 0
-    global s
+#def gridStr(string):
+    # l = len(string)
+    # k = 0
+    # global s
+    #
+    # row = floor(sqrt(l))
+    # column = ceil(sqrt(l))
+    #
+    # if (row * column < l):
+    #     row = column
+    #
+    # s = [[0 for j in range(column)]
+    #      for i in range(row)]
+    #
+    # # convert the string into grid
+    # for i in range(row):
+    #     for j in range(column):
+    #
+    #         if k >= l:
+    #             s[i][j] = " "
+    #             k += 1
+    #
+    #         else:
+    #             s[i][j] = string[k]
+    #             k += 1
+    #
+    # # Printing the grid
+    # for i in range(row):
+    #     for j in range(column):
+    #         if s[i][j] == " ":
+    #             break
+    #
+    #         print(s[i][j], end="")
+    #
+    #     print()
 
-    row = floor(sqrt(l))
-    column = ceil(sqrt(l))
 
-    if (row * column < l):
-        row = column
+# Function to string into grid form
+def function(str, k):
+    global lst
+    for i in range(len(str)):
+        if i % k == 0:
+            sub = str[i:i + k]
+            lst = []
+            for j in sub:
+                lst.append(j)
+            print(''.join(lst))
 
-    s = [[0 for j in range(column)]
-         for i in range(row)]
 
-    # convert the string into grid
-    for i in range(row):
-        for j in range(column):
+# def method(string):
+#     column = 9
+#     row = 9
+#     increment = 0
+#     tempArray = [[0 for j in range(column)]
+#                  for i in range(row)]
+#
+#     for i in range(row):
+#         for j in range(column):
+#             tempArray[i][j] = string[increment]
+#             increment += 1
+#
+#     return tempArray
 
-            if k >= l:
-                s[i][j] = " "
-                k += 1
-
-            else:
-                s[i][j] = string[k]
-                k += 1
-
-    # Printing the grid
-    for i in range(row):
-        for j in range(column):
-            if s[i][j] == " ":
-                break
-
-            print(s[i][j], end="")
-
-        print()
-
-    #print(s[1][1])
+# def make2DArray(string):
+#     y = 0
+#     x = 0
+#     string[,] newArray = string[8,8]
+#
+#     for elem in s:
+#         newArray[x,y] = elem;
+#         x++;
+#         if(x % 8)
+#             y++;
 
 
 def handle_client(client_socket):
@@ -328,11 +365,41 @@ def handle_client(client_socket):
 
                 if data.decode("utf-8") != "":
                     msgReceived = data.decode("utf-8")
-                    gridStr(msgReceived)
+                    #gridStr(msgReceived)
+                    function(msgReceived, 9)
+                    #print(lst[0][0])
                     #position = index_2d(s, "y")
                     #print(position)
-                    indices = [i for i, x in enumerate(s) if x == "y"]
-                    print(indices)
+                    #indices = [i for i, x in enumerate(s) if x == "y"]
+                    #print(indices)
+                    #value = "y"
+                    #result = [(index, row.index(value)) for index, row in enumerate(s) if value in row]
+                    #print(result)
+
+                    # temArray = method(msgReceived)
+                    # print(temArray)
+
+                    a = np.array(lst)
+                    print(a)
+                    # print(a[2][0])
+                    #b = np.where(a == "y")
+                    #print(b)
+
+                    # Def
+                    # make2DArray(string
+                    # s):
+                    #
+                    # int
+                    # y = 0;
+                    # int
+                    # x = 0;
+                    # string[,] newArray = string[8, 8]
+                    #
+                    # for elem in s:
+                    #     newArray[x, y] = elem;
+                    #     x + +;
+                    #     if (x % 8)
+                    #         y + +;
 
 
 
