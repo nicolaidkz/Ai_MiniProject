@@ -297,25 +297,26 @@ def handle_client(client_socket):
                             serverPost = ""
                             print("String is " + serverPost + "EMPTY!")
 
-                # gridStr(msgReceived)
-                function(msgReceived, 9)
-                # print(lst[0][0])
-                # position = index_2d(s, "y")
-                # print(position)
-                # indices = [i for i, x in enumerate(s) if x == "y"]
-                # print(indices)
-                # value = "y"
-                # result = [(index, row.index(value)) for index, row in enumerate(s) if value in row]
-                # print(result)
+                #if data.decode("utf-8") != "":
+                    # gridStr(msgReceived)
+                    #function(msgReceived, 9)
+                    # print(lst[0][0])
+                    # position = index_2d(s, "y")
+                    # print(position)
+                    # indices = [i for i, x in enumerate(s) if x == "y"]
+                    # print(indices)
+                    # value = "y"
+                    # result = [(index, row.index(value)) for index, row in enumerate(s) if value in row]
+                    # print(result)
 
-                # temArray = method(msgReceived)
-                # print(temArray)
+                    # temArray = method(msgReceived)
+                    # print(temArray)
 
-                # a = np.array(lst)
-                # print(a)
-                # print(a[2][0])
-                # b = np.where(a == "y")
-                # print(b)
+                    # a = np.array(lst)
+                    # print(a)
+                    # print(a[2][0])
+                    # b = np.where(a == "y")
+                    # print(b)
 
                     #a = np.array(lst)
                     #print(a)
