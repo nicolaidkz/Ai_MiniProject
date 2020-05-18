@@ -63,21 +63,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Behavior\Animal.cs" />
-    <Compile Include="Assets\Scripts\Behavior\LivingEntity.cs" />
-    <Compile Include="Assets\Scripts\Behavior\Plant.cs" />
-    <Compile Include="Assets\Scripts\Behavior\Rabbit.cs" />
+    <Compile Include="Assets\Scripts\Behavior\Avatar.cs" />
+    <Compile Include="Assets\Scripts\Behavior\FoodShop.cs" />
+    <Compile Include="Assets\Scripts\Behavior\LumberMill.cs" />
+    <Compile Include="Assets\Scripts\Behavior\ObjectInfo.cs" />
+    <Compile Include="Assets\Scripts\Behavior\Trees.cs" />
     <Compile Include="Assets\Scripts\Camera\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\DataTypes\CauseOfDeath.cs" />
     <Compile Include="Assets\Scripts\DataTypes\Coord.cs" />
-    <Compile Include="Assets\Scripts\DataTypes\CreatureAction.cs" />
     <Compile Include="Assets\Scripts\DataTypes\EnumFlagsAttribute.cs" />
-    <Compile Include="Assets\Scripts\DataTypes\Genes.cs" />
-    <Compile Include="Assets\Scripts\DataTypes\Species.cs" />
-    <Compile Include="Assets\Scripts\DataTypes\Surroundings.cs" />
+    <Compile Include="Assets\Scripts\DataTypes\ObjectType.cs" />
     <Compile Include="Assets\Scripts\Environment\Environment.cs" />
     <Compile Include="Assets\Scripts\Environment\EnvironmentUtility.cs" />
     <Compile Include="Assets\Scripts\Environment\Map.cs" />
+    <Compile Include="Assets\Scripts\Repeater.cs" />
     <Compile Include="Assets\Scripts\Terrain\HeightmapGenerator.cs" />
     <Compile Include="Assets\Scripts\Terrain\Noise.cs" />
     <Compile Include="Assets\Scripts\Terrain\NoiseSettings.cs" />

@@ -5,7 +5,7 @@ using UnityEngine;
 // The map is divided into n x n regions, with a list of entities for each region
 // This allows an entity to more quickly find other nearby entities
 public class Map {
-    public readonly List<LivingEntity>[, ] map;
+    public readonly List<ObjectInfo>[, ] map;
     readonly Vector2[, ] centres;
     readonly int regionSize;
     readonly int numRegions;
@@ -14,7 +14,7 @@ public class Map {
     public Map (int size, int regionSize) {
         this.regionSize = regionSize;
         numRegions = Mathf.CeilToInt (size / (float) regionSize);
-        map = new List<LivingEntity>[numRegions, numRegions];
+        map = new List<ObjectInfo>[numRegions, numRegions];
         centres = new Vector2[numRegions, numRegions];
 
         for (int y = 0; y < numRegions; y++) {
@@ -23,21 +23,21 @@ public class Map {
                 Coord regionTopRight = new Coord (x * regionSize + regionSize, y * regionSize + regionSize);
                 Vector2 centre = (Vector2) (regionBottomLeft + regionTopRight) / 2f;
                 centres[x, y] = centre;
-                map[x, y] = new List<LivingEntity> ();
+                map[x, y] = new List<ObjectInfo> ();
             }
         }
     }
 
-    public List<LivingEntity> GetEntities (Coord origin, float viewDistance) {
+    public List<ObjectInfo> GetEntities (Coord origin, float viewDistance) {
         List<RegionInfo> visibleRegions = GetRegionsInView (origin, viewDistance);
         float sqrViewDst = viewDistance * viewDistance;
-        var visibleEntities = new List<LivingEntity> ();
+        var visibleEntities = new List<ObjectInfo> ();
 
         for (int i = 0; i < visibleRegions.Count; i++) {
             Coord regionCoord = visibleRegions[i].coord;
 
             for (int j = 0; j < map[regionCoord.x, regionCoord.y].Count; j++) {
-                LivingEntity entity = map[regionCoord.x, regionCoord.y][j];
+                ObjectInfo entity = map[regionCoord.x, regionCoord.y][j];
                 float sqrDst = Coord.SqrDistance (entity.coord, origin);
                 if (sqrDst < sqrViewDst) {
                     if (EnvironmentUtility.TileIsVisibile (origin.x, origin.y, entity.coord.x, entity.coord.y)) {
@@ -50,9 +50,9 @@ public class Map {
         return visibleEntities;
     }
 
-    public LivingEntity ClosestEntity (Coord origin, float viewDistance) {
+    public ObjectInfo ClosestEntity (Coord origin, float viewDistance) {
         List<RegionInfo> visibleRegions = GetRegionsInView (origin, viewDistance);
-        LivingEntity closestEntity = null;
+        ObjectInfo closestEntity = null;
         float closestSqrDst = viewDistance * viewDistance + 0.01f;
 
         for (int i = 0; i < visibleRegions.Count; i++) {
@@ -65,7 +65,7 @@ public class Map {
             Coord regionCoord = visibleRegions[i].coord;
 
             for (int j = 0; j < map[regionCoord.x, regionCoord.y].Count; j++) {
-                LivingEntity entity = map[regionCoord.x, regionCoord.y][j];
+                ObjectInfo entity = map[regionCoord.x, regionCoord.y][j];
                 float sqrDst = Coord.SqrDistance (entity.coord, origin);
                 if (sqrDst < closestSqrDst) {
                     if (EnvironmentUtility.TileIsVisibile (origin.x, origin.y, entity.coord.x, entity.coord.y)) {
@@ -114,7 +114,7 @@ public class Map {
         return regions;
     }
 
-    public void Add (LivingEntity e, Coord coord) {
+    public void Add (ObjectInfo e, Coord coord) {
         int regionX = coord.x / regionSize;
         int regionY = coord.y / regionSize;
 
@@ -126,7 +126,7 @@ public class Map {
         numEntities++;
     }
 
-    public void Remove (LivingEntity e, Coord coord) {
+    public void Remove (ObjectInfo e, Coord coord) {
         int regionX = coord.x / regionSize;
         int regionY = coord.y / regionSize;
 
@@ -143,7 +143,7 @@ public class Map {
         numEntities--;
     }
 
-    public void Move (LivingEntity e, Coord fromCoord, Coord toCoord) {
+    public void Move (ObjectInfo e, Coord fromCoord, Coord toCoord) {
         Remove (e, fromCoord);
         Add (e, toCoord);
     }
