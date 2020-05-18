@@ -84,17 +84,12 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>super</find>
-      <find>p1t1_array</find>
-      <find>p1t1</find>
-      <find>Transition</find>
-      <find>toState</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
+    <option name="ADD_SUFFIX_TO_CHERRY_PICKS_OF_PUBLISHED_COMMITS" value="false" />
+    <option name="PREVIEW_PUSH_ON_COMMIT_AND_PUSH" value="false" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="WARN_ABOUT_CRLF" value="false" />
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -128,26 +123,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/FiniteStateMachine/TCP.py" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nicol\Documents\GitKraken\Ai_MiniProject\Ai_MiniProject\FSM_FirstEdition\FiniteStateMachine" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.TCP">
+  <component name="RunManager" selected="Python.On-Off_FSM">
     <configuration name="On-Off_FSM" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FSM_FirstEdition" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -240,10 +224,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.On-Off_FSM" />
+        <item itemvalue="Python.On-Off_FSM_Test" />
         <item itemvalue="Python.TCP" />
         <item itemvalue="Python.TCP (1)" />
-        <item itemvalue="Python.On-Off_FSM_Test" />
-        <item itemvalue="Python.On-Off_FSM" />
       </list>
     </recent_temporary>
   </component>

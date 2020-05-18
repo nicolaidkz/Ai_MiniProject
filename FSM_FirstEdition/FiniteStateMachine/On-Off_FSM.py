@@ -165,7 +165,7 @@ if __name__ == '__main__':
     t = RobotMaid("Rob")
     u = RobotMaid("Charlie")
     v = RobotMaid("Roger")
-    for i in range(2):
+    for i in range(10):
         startTime = perf_counter()
         timeInterval = 1
         while (startTime + timeInterval > perf_counter()):
