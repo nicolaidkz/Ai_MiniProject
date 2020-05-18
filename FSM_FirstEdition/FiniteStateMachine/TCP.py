@@ -2,12 +2,16 @@ import socket
 import threading
 from random import randint
 from time import perf_counter
+import numpy as np
+from math import sqrt, floor, ceil
+import io
 import pickle
 import json
 
 serverPost: str = "null"
 length: int = 4
 increment: int = 1
+s: str = ""
 
 # this is the ip we are connecting to
 bind_ip = "127.0.0.1"
@@ -231,6 +235,55 @@ def ServerPost(data):
     return serverPost
 
 
+def index_2d(data, search):
+    for i, e in enumerate(data):
+        try:
+            return i, e.index(search)
+        except ValueError:
+            pass
+    raise ValueError("{} is not in list".format(repr(search)))
+
+
+# Function to string into grid form
+def gridStr(string):
+    l = len(string)
+    k = 0
+    global s
+
+    row = floor(sqrt(l))
+    column = ceil(sqrt(l))
+
+    if (row * column < l):
+        row = column
+
+    s = [[0 for j in range(column)]
+         for i in range(row)]
+
+    # convert the string into grid
+    for i in range(row):
+        for j in range(column):
+
+            if k >= l:
+                s[i][j] = " "
+                k += 1
+
+            else:
+                s[i][j] = string[k]
+                k += 1
+
+    # Printing the grid
+    for i in range(row):
+        for j in range(column):
+            if s[i][j] == " ":
+                break
+
+            print(s[i][j], end="")
+
+        print()
+
+    #print(s[1][1])
+
+
 def handle_client(client_socket):
 
     global serverPost
@@ -271,6 +324,16 @@ def handle_client(client_socket):
                         if (i > length-2):
                             serverPost = ""
                             print("String is " + serverPost + "EMPTY!")
+
+
+                if data.decode("utf-8") != "":
+                    msgReceived = data.decode("utf-8")
+                    gridStr(msgReceived)
+                    #position = index_2d(s, "y")
+                    #print(position)
+                    indices = [i for i, x in enumerate(s) if x == "y"]
+                    print(indices)
+
 
 
                 # if data.decode("utf-8") == "GRID":
