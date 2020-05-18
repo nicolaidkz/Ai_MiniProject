@@ -63,11 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Behavior\Avatar.cs" />
-    <Compile Include="Assets\Scripts\Behavior\FoodShop.cs" />
-    <Compile Include="Assets\Scripts\Behavior\LumberMill.cs" />
-    <Compile Include="Assets\Scripts\Behavior\ObjectInfo.cs" />
-    <Compile Include="Assets\Scripts\Behavior\Trees.cs" />
     <Compile Include="Assets\Scripts\Camera\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\DataTypes\CauseOfDeath.cs" />
     <Compile Include="Assets\Scripts\DataTypes\Coord.cs" />
@@ -76,13 +71,17 @@
     <Compile Include="Assets\Scripts\Environment\Environment.cs" />
     <Compile Include="Assets\Scripts\Environment\EnvironmentUtility.cs" />
     <Compile Include="Assets\Scripts\Environment\Map.cs" />
-    <Compile Include="Assets\Scripts\Repeater.cs" />
     <Compile Include="Assets\Scripts\Terrain\HeightmapGenerator.cs" />
     <Compile Include="Assets\Scripts\Terrain\Noise.cs" />
     <Compile Include="Assets\Scripts\Terrain\NoiseSettings.cs" />
     <Compile Include="Assets\Scripts\Terrain\TerrainGenerator.cs" />
+    <Compile Include="Assets\Scripts\TimeController\Repeater.cs" />
+    <Compile Include="Assets\Scripts\Types\Avatar.cs" />
+    <Compile Include="Assets\Scripts\Types\FoodShop.cs" />
+    <Compile Include="Assets\Scripts\Types\LumberMill.cs" />
+    <Compile Include="Assets\Scripts\Types\ObjectInfo.cs" />
+    <Compile Include="Assets\Scripts\Types\Trees.cs" />
     <None Include="Assets\Scripts\Shaders\Terrain.shader" />
-    <None Include="Assets\Scripts\Shaders\Animal.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/madsa/Desktop/Gitkraken/Ai_MiniProject/AI_Simulator/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

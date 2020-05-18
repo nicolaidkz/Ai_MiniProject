@@ -63,7 +63,6 @@ public static class EnvironmentUtility {
         return true;
     }
 
-    // returns coords of tiles from given tile up to and including the target tile (null if path is obstructed)
     public static Coord[] GetPath (int x, int y, int x2, int y2) {
         // bresenham line algorithm
         int w = x2 - x;
@@ -116,8 +115,6 @@ public static class EnvironmentUtility {
                 y += dy2;
             }
 
-            // If not walkable, path is invalid so return null
-            // (unless is target tile, which may be unwalkable e.g water)
             if (i != longest && !Environment.walkable[x, y]) {
                 return null;
             }
