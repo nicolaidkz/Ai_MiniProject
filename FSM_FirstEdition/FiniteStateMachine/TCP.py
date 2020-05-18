@@ -13,6 +13,7 @@ length: int = 4
 increment: int = 1
 s: str = ""
 lst: str = ""
+agentString: str = ""
 
 # this is the ip we are connecting to
 bind_ip = "127.0.0.1"
@@ -62,9 +63,11 @@ class Idle(State):
     def __init__(self, FSM, name):
         self.name = name
         super(Idle,self).__init__(FSM)
+        global agentString
 
     def Enter(self):
         print(self.name + " is starting to become idle.")
+        agentString = self.name + " is starting to become idle."
         super(Idle, self).Enter()
 
     def Execute(self):
@@ -222,7 +225,6 @@ class RobotMaid(Char):
     def Execute(self):
         self.FSM.Execute()
 
-
 if __name__ == '__main__':
     r = RobotMaid("Claus")
     #s = RobotMaid("Hendrik")
@@ -230,58 +232,14 @@ if __name__ == '__main__':
     #u = RobotMaid("Charlie")
     #v = RobotMaid("Roger")
 
-def ServerPost(data):
-    serverPost = data
 
-    return serverPost
-
-
-def index_2d(data, search):
-    for i, e in enumerate(data):
-        try:
-            return i, e.index(search)
-        except ValueError:
-            pass
-    raise ValueError("{} is not in list".format(repr(search)))
-
-
-# Function to string into grid form
-#def gridStr(string):
-    # l = len(string)
-    # k = 0
-    # global s
-    #
-    # row = floor(sqrt(l))
-    # column = ceil(sqrt(l))
-    #
-    # if (row * column < l):
-    #     row = column
-    #
-    # s = [[0 for j in range(column)]
-    #      for i in range(row)]
-    #
-    # # convert the string into grid
-    # for i in range(row):
-    #     for j in range(column):
-    #
-    #         if k >= l:
-    #             s[i][j] = " "
-    #             k += 1
-    #
-    #         else:
-    #             s[i][j] = string[k]
-    #             k += 1
-    #
-    # # Printing the grid
-    # for i in range(row):
-    #     for j in range(column):
-    #         if s[i][j] == " ":
-    #             break
-    #
-    #         print(s[i][j], end="")
-    #
-    #     print()
-
+# def index_2d(data, search):
+#     for i, e in enumerate(data):
+#         try:
+#             return i, e.index(search)
+#         except ValueError:
+#             pass
+#     raise ValueError("{} is not in list".format(repr(search)))
 
 # Function to string into grid form
 def function(str, k):
@@ -293,32 +251,6 @@ def function(str, k):
             for j in sub:
                 lst.append(j)
             print(''.join(lst))
-
-
-# def method(string):
-#     column = 9
-#     row = 9
-#     increment = 0
-#     tempArray = [[0 for j in range(column)]
-#                  for i in range(row)]
-#
-#     for i in range(row):
-#         for j in range(column):
-#             tempArray[i][j] = string[increment]
-#             increment += 1
-#
-#     return tempArray
-
-# def make2DArray(string):
-#     y = 0
-#     x = 0
-#     string[,] newArray = string[8,8]
-#
-#     for elem in s:
-#         newArray[x,y] = elem;
-#         x++;
-#         if(x % 8)
-#             y++;
 
 
 def handle_client(client_socket):
@@ -345,8 +277,6 @@ def handle_client(client_socket):
                         if (i > length-2):
                             serverPost = ""
                             print("String is " + serverPost + "EMPTY!")
-
-                    #client_socket.send(stringDataPos.encode("utf-8"))
 
 
                 if data.decode("utf-8") == "CollectIron":
@@ -379,36 +309,11 @@ def handle_client(client_socket):
                     # temArray = method(msgReceived)
                     # print(temArray)
 
-                    a = np.array(lst)
-                    print(a)
+                    #a = np.array(lst)
+                    #print(a)
                     # print(a[2][0])
                     #b = np.where(a == "y")
                     #print(b)
-
-                    # Def
-                    # make2DArray(string
-                    # s):
-                    #
-                    # int
-                    # y = 0;
-                    # int
-                    # x = 0;
-                    # string[,] newArray = string[8, 8]
-                    #
-                    # for elem in s:
-                    #     newArray[x, y] = elem;
-                    #     x + +;
-                    #     if (x % 8)
-                    #         y + +;
-
-
-
-                # if data.decode("utf-8") == "GRID":
-                #     print("client says:" + data.decode("utf-8"))
-                #     gridPos = cvObjectOne.OpenCV.detectGrid(cvObjectOne.OpenCV.testImgP1t1)
-                #     print(gridPos)
-                #     gridPosStr = str(gridPos)
-                #     client_socket.send(gridPosStr.encode("utf-8"))
 
             except socket.error:
                 print("Error Occured.")
